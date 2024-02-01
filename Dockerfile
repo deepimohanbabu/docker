@@ -7,7 +7,6 @@ ADD https://www.free-css.com/assets/files/free-css-templates/download/page261/av
 WORKDIR /var/www/html
 RUN unzip avalon.zip
 RUN cp -rvf avalon/* .
-RUN rm -rf avalon avalon.zip
-ENTRYPOINT [" /usr/sbin/apache2ctl"]                
-CMD ["-D", "FOREGROUND"]
+RUN rm -rf avalon avalon.zip            
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
